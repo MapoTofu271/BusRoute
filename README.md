@@ -6,9 +6,9 @@
 
 
 ###### addRouteUtils
-- [ ] need some container for busNumber, direction
+- [X] need some container for busNumber, direction
 - [ ] seperate the logic of createRouteSequence
-- [ ] need the data added can be remove (remove till end)
+- [X] need the data added can be remove (remove till end) also need to delete from the display?
 - [ ] need the end event to display the message and a button to return home
 - [ ] (if possible, want to display the bus route after added)
 
