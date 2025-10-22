@@ -10,8 +10,8 @@ import java.util.List;
 
 @Data
 public class AddRouteRequest {
-    @JsonProperty("routeId")
-    private String routeId;
+    @JsonProperty("busNumber")
+    private String busNumber;
 
     @JsonProperty("direction")
     private int direction;

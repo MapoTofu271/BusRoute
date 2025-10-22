@@ -48,8 +48,8 @@ public class RouteService {
     public void addRoute(@RequestBody AddRouteRequest request){
 
         Route newRoute = new Route();
-        newRoute.setRouteId(request.getRouteId() + "_" + request.getDirection());
-        newRoute.setRoute_short_name("Tuyến " + request.getRouteId());
+        newRoute.setRouteId(request.getBusNumber() + "_" + request.getDirection());
+        newRoute.setRoute_short_name("Tuyến " + request.getBusNumber());
         newRoute.setDirection(request.getDirection());
         long[] list = request.getStopIds();
 
@@ -64,7 +64,7 @@ public class RouteService {
             Trip trip = new Trip();
             StopTime stopTime = new StopTime();
             trip.setRoute(newRoute);
-            trip.setTripId(request.getRouteId() + "_" + request.getDirection()
+            trip.setTripId(request.getBusNumber() + "_" + request.getDirection()
                     + request.getDirection() + "_"
                     + i );
             tripService.saveTrip(trip);
