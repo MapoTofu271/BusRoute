@@ -2,7 +2,7 @@
 
 
 ###### mapInit
-- [ ] create global variable for visibleMarker and addRoutedLayer
+- [x] create global variable for visibleMarker and addRoutedLayer
 
 
 ###### addRouteUtils
