@@ -1,18 +1,17 @@
 //load the add route html page
-import {map} from "map";
+import {map, visibleMarker, addRoutedLayer} from "map";
 
-import {visibleMarker, initMarkerBasedOnLayer} from "mapUtils";
+import {initMarkerBasedOnLayer} from "mapUtils";
 import { initMarker } from "mapUtils";
 
-var addRoutedLayer;
 
 function startCreateRoute() {
     fetch("http://127.0.0.1:5500/components/addRoute.html")
     .then((response) => response.text())
     .then((html) => {
         document.getElementById("content").innerHTML = html;
-        addRoutedLayer = L.layerGroup().addTo(map);
         addRoutedLayer.id = 2;
+        markerBehavior();
     })
     .catch((error) => {
         console.warn(error);
