@@ -1,9 +1,64 @@
-<div id="addRoutePage">
-    <input type="text" name="busNumber" id="busNumber">
-    <input type="radio" name="direction" value="0">Xuất phát
-    <input type="radio" name="direction" value="1">Quay về
-    <div id="displayRouteAdded">
+<div id="addRoutePage" class="add-route-container">
+    <div class="form-section">
+        <h3>Create New Bus Route</h3>
         
+        <div class="input-group">
+            <label for="busNumber">Bus Number:</label>
+            <input type="text" 
+                   name="busNumber" 
+                   id="busNumber" 
+                   data-field="bus-number"
+                   placeholder="Enter bus number (e.g., 38)"
+                   required>
+        </div>
+        
+        <div class="input-group">
+            <label>Direction:</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" 
+                           name="direction" 
+                           value="0" 
+                           data-field="direction"
+                           checked> 
+                    Xuất phát (Outbound)
+                </label>
+                <label>
+                    <input type="radio" 
+                           name="direction" 
+                           value="1" 
+                           data-field="direction"> 
+                    Quay về (Return)
+                </label>
+            </div>
+        </div>
     </div>
-    <button id="sendPostRequest">Send</button>
+    
+    <div class="stops-section">
+        <div class="stops-header">
+            <h4>Selected Stops</h4>
+            <button type="button" 
+                    data-action="clear-all" 
+                    class="btn btn-secondary">
+                Clear All
+            </button>
+        </div>
+        
+        <div id="displayRouteAdded" class="stops-list">
+            <p class="empty-message">Click on map markers to add stops to the route</p>
+        </div>
+    </div>
+    
+    <div class="actions-section">
+        <button type="button" 
+                data-action="save-route" 
+                class="btn btn-primary">
+            Save Route
+        </button>
+        <button type="button" 
+                data-action="cancel-route" 
+                class="btn btn-secondary">
+            Cancel
+        </button>
+    </div>
 </div>
