@@ -5,26 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Website</title>
+    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"/>
+    
+    <!-- Leaflet Routing Machine CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
-    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    
+    <!-- Leaflet Marker Cluster CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    
+    <!-- Leaflet Geocoder CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    
+    <!-- Custom Leaflet Enhancements CSS -->
+    <link rel="stylesheet" href="./styles/leaflet-enhancements.css" />
+    
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Leaflet Routing Machine JavaScript -->
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    
+    <!-- Leaflet Marker Cluster JavaScript -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    
+    <!-- Leaflet Geocoder JavaScript -->
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="main-navigation">
+        <div class="nav-brand">
+            <h1 data-route="/" class="nav-title">Bus Route Manager</h1>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="/" data-route="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/routes" data-route="/routes" class="nav-link">Routes</a>
+            </li>
+            <li class="nav-item">
+                <a href="/routes/add" data-route="/routes/add" class="nav-link">Add Route</a>
+            </li>
+            <li class="nav-item">
+                <a href="/stops" data-route="/stops" class="nav-link">Stops</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Application -->
     <div class="app">
         <div class="sidebar">
-            <h1 class="bar_name">Bus List</h1>
-            <div class="data"></div>
+            <h2 class="sidebar-title">Bus Routes</h2>
+            <div class="routes-list" id="routesList">
+                <!-- Routes will be populated here -->
+            </div>
         </div>
-        <div id="map" style="height: 300px; width: 600px; margin-left: 100px;"></div>
-        <div id="content"></div>
+        
+        <div class="main-content">
+            <div id="map" class="map-container"></div>
+            <div id="content" class="content-area">
+                <!-- Page content will be loaded here -->
+            </div>
+        </div>
     </div>
-
-    <button id='addRouteButton'>Add bus route</button>
 <script type="importmap">
 {
     "imports": {
@@ -38,6 +85,7 @@
 
 <!-- Load in dependency order -->
 <script type="module" src="./scripts/utils/mapInit.js"></script>
+<script type="module" src="./scripts/router.js"></script>
 
 </body>
 </html>

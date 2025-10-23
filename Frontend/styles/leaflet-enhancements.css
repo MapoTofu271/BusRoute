@@ -1,0 +1,339 @@
+/* Enhanced Leaflet Styles */
+
+/* Map container improvements */
+.map-container {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Custom marker styles */
+.custom-bus-stop-marker {
+    background: transparent;
+    border: none;
+}
+
+.bus-stop-marker {
+    text-align: center;
+    background: white;
+    border: 2px solid #3498db;
+    border-radius: 50% 50% 50% 0;
+    padding: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transform: rotate(-45deg);
+    transform-origin: center;
+}
+
+.bus-stop-marker .marker-icon {
+    transform: rotate(45deg);
+    font-size: 16px;
+    line-height: 1;
+}
+
+.bus-stop-marker .marker-label {
+    display: none; /* Show on hover or zoom */
+    transform: rotate(45deg);
+    font-size: 10px;
+    font-weight: bold;
+    color: #2c3e50;
+    white-space: nowrap;
+    margin-top: 2px;
+}
+
+.bus-stop-marker:hover .marker-label {
+    display: block;
+}
+
+/* User location marker */
+.user-location-marker {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Route waypoint markers */
+.route-waypoint-marker {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Marker clustering styles */
+.marker-cluster {
+    background-clip: padding-box;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.marker-cluster div {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 5px;
+    text-align: center;
+    border-radius: 15px;
+    font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.marker-cluster-small {
+    background-color: rgba(181, 226, 140, 0.6);
+}
+
+.marker-cluster-small div {
+    background-color: rgba(110, 204, 57, 0.6);
+}
+
+.marker-cluster-medium {
+    background-color: rgba(241, 211, 87, 0.6);
+}
+
+.marker-cluster-medium div {
+    background-color: rgba(240, 194, 12, 0.6);
+}
+
+.marker-cluster-large {
+    background-color: rgba(253, 156, 115, 0.6);
+}
+
+.marker-cluster-large div {
+    background-color: rgba(241, 128, 23, 0.6);
+}
+
+/* Custom control styles */
+.route-planning-control {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.control-button {
+    background: white;
+    border: none;
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+    transition: all 0.3s ease;
+}
+
+.control-button:hover {
+    background: #f4f4f4;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.control-button:active {
+    transform: translateY(0);
+}
+
+/* Enhanced popup styles */
+.enhanced-stop-popup {
+    min-width: 250px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.popup-header h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 16px;
+}
+
+.stop-id {
+    background: #3498db;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.popup-content {
+    line-height: 1.4;
+}
+
+.stop-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.popup-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #3498db;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.btn-small:hover {
+    background: #2980b9;
+}
+
+/* Routing control enhancements */
+.leaflet-routing-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    border: none;
+    overflow: hidden;
+}
+
+.leaflet-routing-container h2 {
+    background: #3498db;
+    color: white;
+    margin: 0;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.leaflet-routing-container h3 {
+    background: #ecf0f1;
+    color: #2c3e50;
+    margin: 0;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+.leaflet-routing-geocoder {
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 8px;
+}
+
+.leaflet-routing-geocoder input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.leaflet-routing-geocoder input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.leaflet-routing-alternatives-container {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.leaflet-routing-alt {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e9ecef;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.leaflet-routing-alt:hover {
+    background: #f8f9fa;
+}
+
+.leaflet-routing-alt-first {
+    background: #e8f5e8;
+}
+
+/* Route line styles */
+.leaflet-interactive {
+    cursor: pointer;
+}
+
+/* Loading spinner for routing */
+.routing-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .leaflet-routing-container {
+        width: 100% !important;
+        max-width: none !important;
+    }
+    
+    .enhanced-stop-popup {
+        min-width: 200px;
+    }
+    
+    .popup-actions {
+        flex-direction: column;
+    }
+    
+    .btn-small {
+        width: 100%;
+        margin-bottom: 4px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .leaflet-routing-container {
+        background: #2c3e50;
+        color: white;
+    }
+    
+    .leaflet-routing-container h2 {
+        background: #34495e;
+    }
+    
+    .leaflet-routing-container h3 {
+        background: #34495e;
+        color: #ecf0f1;
+    }
+    
+    .enhanced-stop-popup {
+        background: #2c3e50;
+        color: white;
+    }
+    
+    .popup-header {
+        border-bottom-color: #34495e;
+    }
+}
