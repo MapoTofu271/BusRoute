@@ -1,4 +1,4 @@
-import {map} from "map";
+import {map, visibleMarker} from "map";
 
 
 //GET the go route of bus
@@ -48,15 +48,12 @@ async function getAllBusRoute() {
     }
 }
 
-var markerId = []
-var visibleMarker = L.layerGroup();
 
 
 
 //Get the latLng of current view and filter data stop
 //init marker
 function initMarker(data) {
-    visibleMarker.addTo(map);
     let mapBound = map.getBounds();
     visibleMarker.id = 1;
     visibleMarker.clearLayers();
@@ -69,7 +66,6 @@ function initMarker(data) {
                 .addTo(visibleMarker);
             marker.myId = id;
             marker.myName = name;
-            markerId.push(marker.id);
         }
         });
 }
@@ -91,6 +87,6 @@ function onMapStateChange(data) {
 
 }
 
-export {getGoBusRoute, getReturnBusRoute, initMarker, getAllBusRoute, onMapStateChange, visibleMarker, initMarkerBasedOnLayer};
+export {getGoBusRoute, getReturnBusRoute, initMarker, getAllBusRoute, onMapStateChange, initMarkerBasedOnLayer};
 
 

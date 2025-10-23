@@ -18,8 +18,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 
-var visibleMarker = L.layerGroup([]);
-var addRoutedLayer = L.layerGroup([]);
+var visibleMarker = L.layerGroup().addTo(map);
+var addRoutedLayer = L.layerGroup().addTo(map);
 // var layerControl = L.control.layers().addTo(map);
 // layerControl.enable();
 
